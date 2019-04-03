@@ -1,4 +1,4 @@
-# Base project for react libaries
+# Base project for typescript libaries
 
 In the project directory, you can run:
 

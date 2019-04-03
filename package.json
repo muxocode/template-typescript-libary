@@ -15,7 +15,7 @@
   "scripts": {
     "test": "jest",
     "build": "del /Q /S dist && babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.*,test.*,__snapshots__",
-    "tojs": "tsc --jsx react dist/index.ts",
+    "tojs": "tsc dist/index.ts",
     "build:js": "npm run build && npm run tojs"
   },
   "devDependencies": {
