@@ -1,4 +1,4 @@
-# Base project for typescript libaries
+# Base project for typescript libraries
 
 In the project directory, you can run:
 
