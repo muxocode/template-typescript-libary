@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    tools {nodejs "NodeJS"}
+    /*tools {nodejs "NodeJS"}*/
     parameters {
         string(name: 'npm_ServerUrl', defaultValue: 'http://10.1.5.49:4873', description: 'npm server to publish')
         string(name: 'docker_Port', defaultValue: "5001", description: 'port to publish')
