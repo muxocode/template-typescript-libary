@@ -1,5 +1,6 @@
 pipeline {
-    agent any
+        agent {
+        docker { image 'node:7-alpine' }
     /*tools {nodejs "NodeJS"}*/
 
     environment {
@@ -14,6 +15,12 @@ pipeline {
     }
 
     stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+
         stage('prueba') {
             steps {
                     sh "echo ${env.SALUDO}"
