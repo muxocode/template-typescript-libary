@@ -1,4 +1,5 @@
 pipeline {
+    load "./.env"
     agent any
     /*tools {nodejs "NodeJS"}*/
     parameters {
