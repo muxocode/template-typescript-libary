@@ -2,6 +2,11 @@ pipeline {
     load "./.env"
     agent any
     /*tools {nodejs "NodeJS"}*/
+
+    environment {
+        SALUDO="hola Pedro"
+    }
+
     parameters {
         string(name: 'npm_ServerUrl', defaultValue: 'http://10.1.5.49:4873', description: 'npm server to publish')
         string(name: 'docker_Port', defaultValue: "5001", description: 'port to publish')
