@@ -11,9 +11,7 @@ pipeline {
     stages {
         stage('prueba') {
             steps {
-                withSonarQubeEnv('SonarGamesa') {
                     sh "echo hola"
-                }
             }
         }
 
