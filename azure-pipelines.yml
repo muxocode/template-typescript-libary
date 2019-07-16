@@ -15,13 +15,3 @@ steps:
     npm run test
     npm run build
   displayName: 'install + test + build'
-
-# Node.js
-- task: Npm@1
-  inputs:
-    command: 'publish'
-    publishRegistry: 'useFeed'
-    publishFeed: '6cc9d0b3-450e-45fc-a6e8-c91dc8782281'
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
