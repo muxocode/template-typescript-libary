@@ -1,32 +1,34 @@
 {
-  "name": "ts-lib",
-  "version": "1.0.0",
+  "name": "mxcd.template.ts",
+  "version": "1.1.3",
   "private": false,
-  "main": "dist/index.tsx",
-  "module": "dist/index.tsx",
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/muxocode/base-typescript-libary"
-  },
+  "main": "index.js",
+  "keywords": ["template", "ts", "js"],
   "scripts": {
     "test": "jest",
-    "copy": "babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.*,test.*,__snapshots__",
-    "delete": "node delete.js",
-    "build": "npm run delete && npm run copy",
-    "tojs": "tsc dist/index.ts",
-    "build:js": "npm run build && npm run tojs"
+    "test:coverage": "npm test -- --coverage",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
+    "delete": "node scripts/delete.js",
+    "build": "npm run delete && npm run tojs && npm run copy",
+    "copy": "node scripts/copy.js",
+    "tojs": "tsc --sourceMap --esModuleInterop --declaration --outDir dist src/index.ts",
+    "publish:dist": "npm publish ./dist"
+  },
+  "jest": {
+    "testResultsProcessor": "./node_modules/jest-junit-reporter",
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "coverageReporters": [
+      "cobertura",
+      "html"
+    ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/jest": "24.0.11",
+    "@types/jest": "^24.0.18",
     "@types/node": "11.12.0",
-    "babel-cli": "^6.26.0",
-    "jest": "24.7.0",
-    "typescript": "3.3.4000"
+    "jest": "^24.9.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3",
+    "jest-junit-reporter": "^1.1.0"
   }
 }
