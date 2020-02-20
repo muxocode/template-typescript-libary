@@ -8,6 +8,8 @@ See the section about [running tests](https://jestjs.io/) for more information.
 Transpile the code inside src/lib (ignoring tests and snapshots) into the folder dist
 ### `npm run publish:dist`
 Publish the dist package
+### `npm run bundle`
+Creates a bundle file in ./bundle/index.js
 ## Files
 ### DIST.md
 File that with be you readme.md on distribution package

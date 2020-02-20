@@ -3,7 +3,11 @@
   "version": "1.1.3",
   "private": false,
   "main": "index.js",
-  "keywords": ["template", "ts", "js"],
+  "keywords": [
+    "template",
+    "ts",
+    "js"
+  ],
   "scripts": {
     "test": "jest",
     "test:coverage": "npm test -- --coverage",
@@ -12,7 +16,8 @@
     "build": "npm run delete && npm run tojs && npm run copy",
     "copy": "node scripts/copy.js",
     "tojs": "tsc --sourceMap --esModuleInterop --declaration --outDir dist src/index.ts",
-    "publish:dist": "npm publish ./dist"
+    "publish:dist": "npm publish ./dist",
+    "bundle": "node scripts/bundle.js & npm run build & browserify ./dist/index.js > ./bundle/index.js -t [ babelify --presets [es2015]]"
   },
   "jest": {
     "testResultsProcessor": "./node_modules/jest-junit-reporter",
@@ -24,11 +29,16 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.8.4",
     "@types/jest": "^24.0.18",
     "@types/node": "11.12.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
     "jest": "^24.9.0",
+    "jest-junit-reporter": "^1.1.0",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.5.3",
-    "jest-junit-reporter": "^1.1.0"
+    "typescript": "^3.5.3"
   }
 }
