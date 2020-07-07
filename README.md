@@ -1,4 +1,4 @@
-# Base project for typescript libraries
+# CookieManager
 In the project directory, you can run:
 ## Commands
 ### `npm run test`

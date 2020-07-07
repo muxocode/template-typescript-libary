@@ -14,7 +14,7 @@
 
 # production
 /dist
-/bundle
+/bundle/indes.js
 
 # misc
 .DS_Store

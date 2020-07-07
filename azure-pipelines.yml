@@ -17,38 +17,16 @@ steps:
 
 - script: |
     npm install
-  displayName: 'npm install'
+    npm run build
+  displayName: 'npm install and build'
+
+- script: |
+    npm run test
+  displayName: 'test'
 
 - task: Npm@1
   inputs:
-    command: 'custom'
-    customCommand: 'run build'
-  displayName: 'build'
-
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    customCommand: 'run test:coverage'
-  displayName: 'test + coverage'
-
-- task: PublishTestResults@2
-  condition: succeeded()
-  inputs:
-    testRunner: JUnit
-    testResultsFiles: '**/test-report.xml'
-
-- task: PublishCodeCoverageResults@1
-  condition: succeeded()
-  inputs: 
-    codeCoverageTool: Cobertura
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage/*cobertura*.xml'
-    reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
-
-#- task: Npm@1
-#  condition: succeeded()
-#  inputs:
-#    command: 'publish'
-#    workingDir: '$(System.DefaultWorkingDirectory)/dist'
-#    publishRegistry: 'useFeed'
-#    publishFeed: '26f682df-8948-4627-be33-82d9f57453b1'
-#  displayName: 'Publish'
+    command: 'publish'
+    workingDir: '$(System.DefaultWorkingDirectory)/dist'
+    publishRegistry: 'useFeed'
+    publishFeed: 'b9e3a6cf-fbea-4849-9cf1-a85719970cc4/fd3ece6d-0c6d-4218-8e04-96e50b1a680b'
