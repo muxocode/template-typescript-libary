@@ -1,4 +1,4 @@
-# CookieManager
+# TS Library
 In the project directory, you can run:
 ## Commands
 ### `npm run test`
@@ -13,7 +13,5 @@ Creates a bundle file in ./bundle/index.js
 ## Files
 ### DIST.md
 File that with be you readme.md on distribution package
-### azure-pipelines.yml
-For azure pipelines
 ### src/index.ts
 Main file for yout TS library
